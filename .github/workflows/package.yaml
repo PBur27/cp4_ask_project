@@ -1,5 +1,8 @@
 name: Create package
-on: [push]
+on:
+  push:
+    tags:
+      - "v*"
 jobs: 
   BuildPackage:
     runs-on: ubuntu-latest
@@ -13,3 +16,8 @@ jobs:
       - name: "Run maven test"
         run: mvn -DskipTests package
       - run: ls -la target/
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.tar.gz,foo/*.txt"
+          bodyFile: "body.md"
+      
