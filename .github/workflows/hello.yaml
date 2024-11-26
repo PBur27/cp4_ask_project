@@ -8,6 +8,7 @@ jobs:
       - name: "First Command"
         run: echo "Pawel"
       - run: echo "The name of this branch is ${{ github.ref }}"
+      - uses: actions/checkout@v4
       - name: "show structure"
         run: tree ./
       - run: echo "it works"
