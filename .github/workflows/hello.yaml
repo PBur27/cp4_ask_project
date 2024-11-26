@@ -7,4 +7,9 @@ jobs:
     steps:
       - name: "First Command"
         run: echo "Pawel"
+      - run: echo "The name of this branch is ${{ github.ref }}"
+      - name: "show structure"
+        run: tree ./
+      - run: echo "it works"
+      
     
